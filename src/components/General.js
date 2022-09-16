@@ -9,7 +9,8 @@ import "../styles/General.css"
     super(props);
     this.state = {
       about: "Motivated by 8 years of Area of expertise. Recognise for assessing operational need and developing solution to save cost, improve revenues and drive customers satisfaction Resourceful and well-organized with excellent.",
-      image: "",
+      imageUploaded: false,
+      imageUrl: null,
       every: {about: "", image: "", id: uniqid()},
       edit: false,
     }
@@ -26,6 +27,20 @@ import "../styles/General.css"
       [e.target.name]: e.target.value
     });
   }
+
+
+ onChangePicture = (e) => {
+		if (e.target.files[0]) {
+			const reader = new FileReader();
+			reader.addEventListener('load', () => {
+        this.setState({
+          imageUrl: reader.result,
+          imageUploaded: true
+        })
+			});
+			reader.readAsDataURL(e.target.files[0]);
+		}
+	};
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -50,13 +65,12 @@ import "../styles/General.css"
   }
 
   render() {
-    console.log(this.state.every)
     return (
       <div className='general'>
         <div className='image_container'>
           <button><label htmlFor='image'>Edit</label></button>
-          <input type="file" name='image' value={this.state.image} onChange={this.handleOnChange} id='image' className="choose_image" />
-          <img className='image' src={this.state.every.image? this.state.every.image: User} id='image' alt='user' />
+          <input type="file" name='image' value=""  onChange={this.onChangePicture} id='image' className="choose_image" />
+          {this.state.imageUploaded ? <img className='image' src={this.state.imageUrl} id='image' alt='user' /> : <img className='image' src={User} id='image' alt='user' /> }
         </div>
         <div className='about'>
           <h3 className='title'>About Me</h3>

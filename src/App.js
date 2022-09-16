@@ -6,13 +6,18 @@ class App extends Component {
     constructor(props) {
         super(props)
     }
+
+    
     render() {
         return(
             <div className="container">
-                {/* <Instruction /> */}
+                <Instruction />
                 <Resume />
             </div>
         )
     }}
 
 export default App;
+
+
+

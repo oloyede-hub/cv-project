@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navibar from "../Utils/Navibar";
+
 import ReactToPrint from "react-to-print";
 
 import "../styles/Resume.css";
@@ -14,9 +15,8 @@ class Resume extends Component {
           trigger={() => {
             return <button className="print-btn">Print</button>;
           }}
+          documentTitle="Curriculum Vitae"
           content={() => this.componentRef}
-          documentTitle="curriculum-vitae"
-          pageStyle={`margin:0 @media print { html, body { height: initial !important; overflow: initial !important; -webkit-print-color-adjust: exact; }}`}
           />
           <ComponentToPrint ref={el => (this.componentRef = el)} />
       </div>
