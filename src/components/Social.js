@@ -90,6 +90,10 @@ class Social extends Component {
         value: "logo-github",
       }
     ]
+<<<<<<< HEAD
+=======
+    const {} = this.state
+>>>>>>> 7e2c6a2cf95b61f34d12cf47d2abc593399b060b
 
     return (
       <div className='social'>
