@@ -9,12 +9,8 @@ import "../styles/General.css"
     super(props);
     this.state = {
       about: "Motivated by 8 years of Area of expertise. Recognise for assessing operational need and developing solution to save cost, improve revenues and drive customers satisfaction Resourceful and well-organized with excellent.",
-<<<<<<< HEAD
       imageUploaded: false,
       imageUrl: null,
-=======
-      image: "",
->>>>>>> 7e2c6a2cf95b61f34d12cf47d2abc593399b060b
       every: {about: "", image: "", id: uniqid()},
       edit: false,
     }
@@ -32,7 +28,6 @@ import "../styles/General.css"
     });
   }
 
-<<<<<<< HEAD
 
  onChangePicture = (e) => {
 		if (e.target.files[0]) {
@@ -47,8 +42,6 @@ import "../styles/General.css"
 		}
 	};
 
-=======
->>>>>>> 7e2c6a2cf95b61f34d12cf47d2abc593399b060b
   handleSubmit = (event) => {
     event.preventDefault();
     const { about, image } = this.state
@@ -72,21 +65,12 @@ import "../styles/General.css"
   }
 
   render() {
-<<<<<<< HEAD
-=======
-    console.log(this.state.every)
->>>>>>> 7e2c6a2cf95b61f34d12cf47d2abc593399b060b
     return (
       <div className='general'>
         <div className='image_container'>
           <button><label htmlFor='image'>Edit</label></button>
-<<<<<<< HEAD
           <input type="file" name='image' value=""  onChange={this.onChangePicture} id='image' className="choose_image" />
           {this.state.imageUploaded ? <img className='image' src={this.state.imageUrl} id='image' alt='user' /> : <img className='image' src={User} id='image' alt='user' /> }
-=======
-          <input type="file" name='image' value={this.state.image} onChange={this.handleOnChange} id='image' className="choose_image" />
-          <img className='image' src={this.state.every.image? this.state.every.image: User} id='image' alt='user' />
->>>>>>> 7e2c6a2cf95b61f34d12cf47d2abc593399b060b
         </div>
         <div className='about'>
           <h3 className='title'>About Me</h3>
